@@ -98,17 +98,121 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+*/
+ function articleComponent(title,date,firstParagraph,secondParagraph,thirdParagraph ){
+  const a = document.createElement("div");  
+  const h2 = document.createElement("h2");
+  const d  = document.createElement("p");
+  const p  = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const span = document.createElement("span");
+   
+  a.classList.add("article");
+  d.classList.add("date");
+  span.classList.add("expandButton");
 
-  Hint: You will need to use createElement more than once here!
+  h2.textContent = title;
+  d.textContent = date;
+  p.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
+
+  // a.appendCh("h2");
+  // a.appendChild("date");
+  // a.appendChild("p");
+  // a.appendChild("p2");
+  // a.appendChild("p3");
+  // a.appendChild("span");
+
+  a.append(h2,date,p,p2,p3,span);
+
+  
+  return a;
+ }
+
+ const container = document.querySelector(".articles");
+
+ data.push(
+  {
+  title :"Fake News", 
+  date: "everyday all day", 
+  firstParagraph: "fasfasfalsfanlkfalsfalsfalks",
+  secondParagraph: "sfafsasfaksfoafsksaffsafas",
+  thirdParagraph:"fasfasfasfnkasffknksafknkfsfk"} );
+
+ data.forEach(info => {
+  console.log("hello");
+  container.appendChild(articleComponent(info.title, info.date, info.firstParagraph,info.secondParagraph,info.thirdParagraph));
+ });
+
+
+ 
+/* 
+Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
+*//* 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+
+ // Step 3: return the entire component.
+
+  //Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'a' div.
+
+//  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+
+// function createData(
+//   title,
+//   date,
+//   firstParagraph,
+//   secondParagraph,
+//   thirdParagraph
+// ) {
+//   const divarticle = document.createElement(`div`);
+//   divarticle.classList.add(`article`);
+//   const head2 = document.createElement(`h2`);
+//   head2.textContent = title;
+//   const pardate = document.createElement(`p`);
+//   pardate.classList.add(`date`);
+//   pardate.textContent = date;
+//   const parone = document.createElement(`p`);
+//   parone.textContent = firstParagraph;
+//   const partwo = document.createElement(`p`);
+//   partwo.textContent = secondParagraph;
+//   const parthree = document.createElement(`p`);
+//   parthree.textContent = thirdParagraph;
+//   const spanele = document.createElement(`span`);
+//   spanele.classList.add(`expandButton`);
+//   spanele.textContent = `Expand`;
+//   divarticle.append(head2, pardate, parone, partwo, parthree, spanele);
+//   spanele.addEventListener(`click`, () => {
+//     divarticle.classList.toggle('article-open');
+//     if (spanele.textContent !== `Expand`) {
+//       spanele.textContent = `Expand`;
+//     } else {
+//       spanele.textContent = `Close`;
+//     }
+//     if (spanele.textContent === `Close`) {
+//       spanele.addEventListener(`click`, () => {
+//         divarticle.style.display = `none`;
+//       });
+//     }
+//   });
+//   return divarticle;
+// }
+// data.forEach(d => {
+//   const art = document.querySelector('.a');
+//   art.appendChild(
+//     createData(
+//       d.title,
+//       d.date,
+//       d.firstParagraph,
+//       d.secondParagraph,
+//       d.thirdParagraph
+//     )
+//   );
+// });
